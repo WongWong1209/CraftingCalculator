@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+    <title>千羽的阿爾比恩製造計算器</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="wongwong.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<header>
+    <h1>千羽的阿爾比恩製造計算器(*ﾟ▽ﾟ*)!!</h1>
+    <p id="line">
+        需要幫忙可以來我dc問呦:<a href="https://discord.gg/kjajx2BFk9" target="_blank"><img src="dclogo.png" class="logos"></a>
+        我的YouTube頻道:<a href="https://www.youtube.com/channel/UCqwEZYkFVmqXoJAbgGxw1HA" target="_blank"><img src="ytlogo.png" class="logos"></a>
+    </p>
+</header>
+<body>
+    <section class="a">
+        <section class="sort">
+            <h1><u>素材</u></h1>
+            <p>
+                素材名稱:<textarea id="material1"></textarea>
+                單件所需數量:<textarea id="need1"></textarea>
+                單件素材成本:<textarea id="cost1"></textarea>
+                <input type="checkbox" id="cbox1">
+                <label for="cbox1">神器材料</label>
+            </p>
+            <p>
+                素材名稱:<textarea id="material2"></textarea>
+                單件所需數量:<textarea id="need2"></textarea>
+                單件素材成本:<textarea id="cost2"></textarea>
+                <input type="checkbox" id="cbox2">
+                <label for="cbox2">神器材料</label>
+            </p>
+            <p>
+                素材名稱:<textarea id="material3"></textarea>
+                單件所需數量:<textarea id="need3"></textarea>
+                單件素材成本:<textarea id="cost3"></textarea>
+                <input type="checkbox" id="cbox3">
+                <label for="cbox3">神器材料</label>
+            </p>
+            <p>
+                素材名稱:<textarea id="material4"></textarea>
+                單件所需數量:<textarea id="need4"></textarea>
+                單件素材成本:<textarea id="cost4"></textarea>
+                <input type="checkbox" id="cbox4">
+                <label for="cbox4">神器材料</label>
+            </p>
+        </section>
+        <section class="sort">
+            <h1><u>結算</u></h1>
+            <p>製造數量:<textarea id="quantity"></textarea></p>
+            <p>返還率:<textarea id="returnPercentage"></textarea>%</p>
+            <p>單件出售價:<textarea id="salePrice"></textarea></p>
+            <p>稅率:<textarea id="taxPercentage"></textarea>%</p>
+            <p>額外支出:<textarea id="extraCost"></textarea></p>
+            <p>額外收入:<textarea id="extraIncome"></textarea></p>
+            <p>
+                每件製造聲望:<textarea id="famePerItem"></textarea>
+                <input type="checkbox" id="cbox5">
+                <label for="cbox5">有尊享加成</label>
+            </p>
+            <p>日誌每本聲望容量:<textarea id="famePerJournal"></textarea></p>
+            <p>日誌每本可得收益:<textarea id="profitPerJournal"></textarea></p>
+            <p>日誌每本購入成本:<textarea id="costPerJournal"></textarea></p>
+            <p>每件消耗專注點:<textarea id="pointPerItem"></textarea></p>
+        </section>
+        <button onclick="Calculate();">計算</button>
+    </section>
+    <section id="out" class="a">
+        <h1><u>輸出</u></h1>
+        <h2 id="totalProfit">淨收益:</h2>
+        <p>【交易】</p>
+        <div id="output1">
+            <p id="trade">
+                總出售價:<br>
+                稅:<br>
+                每件成本:<br>
+            </p>
+        </div>
+        <p>【製造】</p>
+        <div id="output2">
+            <p id="craft">
+                [素材一]需:<br>
+                [素材二]需:<br>
+                [素材三]需:<br>
+                [素材四]需:<br>
+                總素材成本:<br>
+            </p>
+        </div>
+        <p>【專注點】</p>
+        <div id="output3">
+            <p id="point">
+                消耗專注點:<br>
+            </p>
+        </div>
+        <p>【日誌】</p>
+        <div id="output4">
+            <p id="journal">
+                可填:<br>
+                日誌收益:<br>
+                日誌成本:<br>
+                日誌淨收益:<br>
+            </p>
+        </div>
+        <p>【聲望】</p>
+        <div id="output5">
+            <p id="fame">
+                製造聲望:<br>
+            </p>
+        </div>
+    </section>
+</body>
