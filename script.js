@@ -155,8 +155,6 @@ function CalculateOutput() {
 }
 
 function Output() {
-    console.log(isGod1);
-
     document.getElementById("totalProfit").innerText = `淨收益:${separator(TotalProfit)}\n`;
     document.getElementById("trade").innerText = `總出售價:${separator(TotalSalePrice)}\n稅:${separator(Tax)}\n每件成本:${separator(CostPerItem)}\n`;
     document.getElementById("craft").innerText = `[${material1}]需:${separator(MaterialTTN1)}\n[${material2}]需:${separator(MaterialTTN2)}\n[${material3}]需:${separator(MaterialTTN3)}\n[${material4}]需:${separator(MaterialTTN4)}\n總素材成本:${separator(TotalMaterialCost)}\n`;
