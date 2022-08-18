@@ -50,7 +50,7 @@ var isVIP = 1;
 function Calculate() {
     InitVariable();
     CalculateOutput();
-    Output()
+    Output();
 }
 
 function InitVariable() {
@@ -126,14 +126,14 @@ function InitVariable() {
 function CalculateOutput() {
     TotalSalePrice = salePrice * quantity;
     Tax = TotalSalePrice * taxPercentage * 0.01;
-    TotalMaterialCost = need1 * (100-returnPercentage) * 0.01 * cost1 * quantity * isGod1 + 
-                        need2 * (100-returnPercentage) * 0.01 * cost2 * quantity * isGod2 +
-                        need3 * (100-returnPercentage) * 0.01 * cost3 * quantity * isGod3 +
-                        need4 * (100-returnPercentage) * 0.01 * cost4 * quantity * isGod4
-    MaterialTTN1 = need1 * quantity * (100-returnPercentage) * 0.01;
-    MaterialTTN2 = need2 * quantity * (100-returnPercentage) * 0.01;
-    MaterialTTN3 = need3 * quantity * (100-returnPercentage) * 0.01;
-    MaterialTTN4 = need4 * quantity * (100-returnPercentage) * 0.01;
+    TotalMaterialCost = need1 * (100-(returnPercentage * isGod1)) * 0.01 * cost1 * quantity + 
+                        need2 * (100-(returnPercentage * isGod2)) * 0.01 * cost2 * quantity +
+                        need3 * (100-(returnPercentage * isGod3)) * 0.01 * cost3 * quantity +
+                        need4 * (100-(returnPercentage * isGod4)) * 0.01 * cost4 * quantity;
+    MaterialTTN1 = need1 * quantity * (100-(returnPercentage * isGod1)) * 0.01;
+    MaterialTTN2 = need2 * quantity * (100-(returnPercentage * isGod2)) * 0.01;
+    MaterialTTN3 = need3 * quantity * (100-(returnPercentage * isGod3)) * 0.01;
+    MaterialTTN4 = need4 * quantity * (100-(returnPercentage * isGod4)) * 0.01;
     TotalPointCost = pointPerItem * quantity;
     if(famePerJournal==0) {
         FullJournals = 0;
@@ -155,6 +155,8 @@ function CalculateOutput() {
 }
 
 function Output() {
+    console.log(isGod1);
+
     document.getElementById("totalProfit").innerText = `淨收益:${separator(TotalProfit)}\n`;
     document.getElementById("trade").innerText = `總出售價:${separator(TotalSalePrice)}\n稅:${separator(Tax)}\n每件成本:${separator(CostPerItem)}\n`;
     document.getElementById("craft").innerText = `[${material1}]需:${separator(MaterialTTN1)}\n[${material2}]需:${separator(MaterialTTN2)}\n[${material3}]需:${separator(MaterialTTN3)}\n[${material4}]需:${separator(MaterialTTN4)}\n總素材成本:${separator(TotalMaterialCost)}\n`;
