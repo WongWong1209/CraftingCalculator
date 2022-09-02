@@ -139,7 +139,7 @@ function CalculateOutput() {
         FullJournals = 0;
     } 
     else {
-        FullJournals = Math.floor((famePerItem / (isVIP * quantity)) / famePerJournal);
+        FullJournals = Math.floor((famePerItem / isVIP * quantity) / famePerJournal);
     }
     JournalProfit = FullJournals * profitPerJournal;
     JournalCost = costPerJournal * FullJournals;
